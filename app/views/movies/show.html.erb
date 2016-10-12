@@ -1,0 +1,4 @@
+
+<h2 class="link"><%= link_to "Delete", album_path(@album), method: :delete, data: { confirm: 'Are you certain you want to delete?' } %></h2>
+<h2 class="link"><%= button_to("View all Albums", albums_path(@album), method: :get) %></h2>
+<h2 class="link"><%= button_to("Edit", edit_albums_path(@album), method: :get) %></h2>
