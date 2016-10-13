@@ -1,0 +1,17 @@
+<% i.each do |item| %>
+<h1><%=  %> <%=link_to("#{item.name}", item, method: :get ) %></h1>
+  <% end %>
+
+<h1><%= button_to("View more movies", 'movies/index', method: :get) %></h1>
+
+<% item.each do |item| %>
+<h1><%=  %> <%=link_to("#{item.name}", item, method: :get ) %></h1>
+  <% end %>
+
+<h1><%= button_to("View More books", 'books/index', method: :get) %></h1>
+
+<% items.each do |item| %>
+<h1><%=  %> <%=link_to("#{item.name}", item, method: :get ) %></h1>
+  <% end %>
+
+<h1><%= button_to("View More albums", 'albums/index', method: :get) %></h1>

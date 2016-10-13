@@ -1,2 +1,2 @@
-class Album < ActiveRecord::Base
+class Album < Medium
 end

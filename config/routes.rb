@@ -2,9 +2,13 @@ Rails.application.routes.draw do
   get 'welcome/index'
   root 'welcome#index'
 
-   resources :movies
-   resources :books
-   resources :albums
+  #so, really you would want to dry up the routes by limiting controllers
+[:movies, :books, :albums].each do |one|
+  resources one
+end
+  #  resources :movies
+  #  resources :books
+  #  resources :albums
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

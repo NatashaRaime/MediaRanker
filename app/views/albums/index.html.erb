@@ -1,8 +1,1 @@
-<!-- <% @album.each do |f| %>
-  <h1><%= link_to(@album.name, albums_path, method: :get ) %></h1>
-  <h1><%= button_to("Edit", edit_album_path(f), method: :get) %></h1>
-  <h1><%= button_to("New", new_album_path, method: :get) %></h1>
-  <h1><%= button_to("Upvote", album_path(f), method: :get) %>
-<% end %> -->
-
-<%= render :partial => 'application/index', :collection => @albums, :spacer_template => 'post_divider' %>
+<%= render partial: 'form', locals:{items: @medias}, :spacer_template => 'post_divider' %>
