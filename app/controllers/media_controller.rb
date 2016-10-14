@@ -1,5 +1,9 @@
 class MediaController < ApplicationController
-
+  def upvote
+    @media = Media.find(params[:id])
+    @media.Votes.create
+    redirect_to(media_path)
+  end
   def index
     @medias = type.all
   end

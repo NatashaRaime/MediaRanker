@@ -1,17 +1,8 @@
-<% i.each do |item| %>
-<h1><%=  %> <%=link_to("#{item.name}", item, method: :get ) %></h1>
-  <% end %>
 
-<h1><%= button_to("View more movies", 'movies/index', method: :get) %></h1>
-
-<% item.each do |item| %>
-<h1><%=  %> <%=link_to("#{item.name}", item, method: :get ) %></h1>
-  <% end %>
-
-<h1><%= button_to("View More books", 'books/index', method: :get) %></h1>
-
+<h1 class= "tops"> Top Movies Top Books Top Albums </h1>
 <% items.each do |item| %>
-<h1><%=  %> <%=link_to("#{item.name}", item, method: :get ) %></h1>
-  <% end %>
+<td><%=link_to("#{item.name}", item, method: :get ) %></td>
+<td>Ranked:<%= item.upvote.count %></td>
+<% end %>
 
-<h1><%= button_to("View More albums", 'albums/index', method: :get) %></h1>
+<h1><%= button_to("View More", items, method: :get) %></h1>

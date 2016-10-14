@@ -3,12 +3,28 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   #so, really you would want to dry up the routes by limiting controllers
-[:movies, :books, :albums].each do |one|
-  resources one
-end
-  #  resources :movies
-  #  resources :books
-  #  resources :albums
+# [:movies, :books, :albums].each do |one|
+#   resources one
+#   end
+# end
+
+
+     resources :movies do
+       member do
+         post 'votes'
+       end
+     end
+     resources :books do
+       member do
+         post 'votes'
+       end
+     end
+     resources :albums do
+       member do
+         post 'votes'
+       end
+     end
+   end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -64,4 +80,3 @@ end
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
