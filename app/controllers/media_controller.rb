@@ -1,4 +1,5 @@
 class MediaController < ApplicationController
+  
   def upvote
     @media = Media.find(params[:id])
     @media.Votes.create
