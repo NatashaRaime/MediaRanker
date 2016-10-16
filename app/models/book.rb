@@ -1,2 +1,0 @@
-class Book < Medium
-end

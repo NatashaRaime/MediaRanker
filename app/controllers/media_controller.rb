@@ -1,26 +1,30 @@
 class MediaController < ApplicationController
-  
-  def upvote
-    @media = Media.find(params[:id])
-    @media.Votes.create
+
+  def votes
+    @medium = Medium.find(params[:id])
+    @medium.votes += 1
+    @medium.save
     redirect_to(media_path)
   end
+
   def index
-    @medias = type.all
+    @media = Medium.where(media_type: params[:media_type])
   end
 
   def new
-    @media = type.new
+    @medium = Medium.new(media_type: params[:media_type])
   end
 
   def show
-    @media = type.find(params[:id])
-    @media.save
+    @medium = Medium.find(params[:id])
+    @medium.save
   end
 
   def create
-    @media = type.create
-    if @media.save
+    @medium = Medium.create(medium_params) do |medium|
+      medium.media_type = params[:media_type]
+    end
+    if @medium.save
       redirect_to root_path
     else
       render :new
@@ -28,17 +32,17 @@ class MediaController < ApplicationController
   end
 
   def destroy
-    @media = type.find(params[:id]).destroy
+    @medium = Medium.find(params[:id]).destroy
     redirect_to types_path
   end
 
   def edit
-    @media = type.find(params[:id])
+    @medium = Medium.find(params[:id])
   end
 
   def update
-    @media = type.find(params[:id])
-    if @media.update(type_params)
+    @medium = Medium.find(params[:id])
+    if @medium.update(medium_params)
       redirect_to type_path(params[:id])
     else
       render :edit
@@ -48,7 +52,7 @@ class MediaController < ApplicationController
 
   private
 
-  def type_params
-    params.require(:type).permit(:id, :name, :creator, :description)
+  def medium_params
+    params.require(:medium).permit(:name, :creator, :description)
   end
 end

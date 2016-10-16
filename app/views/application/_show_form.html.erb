@@ -3,8 +3,8 @@
   <h1><%= item.name %> <%= creator%>by:<%= item.creator %></h1>
   <td>Ranked:<%= item.votes %></td>
   <h1><%= item.description %></h1>
-  <h1><%= button_to "Upvote", votes_"#{item}"_path, method: :post %></h1>
-  <h1><%= button_to "Edit", edit_item_path(item), method: :get) %></h1>
+  <h1><%= button_to "Upvote", votes_path(@media), method: :post %></h1>
+  <h1><%= button_to "Edit", edit(item), method: :get) %></h1>
   <h1><%= button_to "Delete", {action: "delete", id: @media.id}, method: :delete, data: { confirm: "Are you sure?" } %></h1>
   <h1><%= button_to ("View All #{type}s", item, method: :get) %></h1>
   <h1><%= button_to ("View All Media", root_path, method: :get) %></h1>

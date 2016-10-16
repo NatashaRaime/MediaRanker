@@ -1,6 +1,6 @@
 
-<h1><%= link_to("view more albums", albums_path, method: :get) %></h1>
-<h1><%= link_to("view more books", books_path, method: :get) %></h1>
-<h1><%= link_to("view more movies", movies_path, method: :get) %></h1>
+<h1><%= link_to("view more albums", media_path(media_type: 'albums'), method: :get) %></h1>
+<h1><%= link_to("view more books", media_path(media_type: 'books'), method: :get) %></h1>
+<h1><%= link_to("view more movies", media_path(media_type: 'movies'), method: :get) %></h1>
 
 <%# render partial: 'welcome', locals:{i: @movies, item: @books, items: @albums}, :spacer_template => 'post_divider' %>

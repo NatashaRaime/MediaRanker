@@ -8,23 +8,28 @@ Rails.application.routes.draw do
 #   end
 # end
 
-
-     resources :movies do
-       member do
-         post 'votes'
-       end
-     end
-     resources :books do
-       member do
-         post 'votes'
-       end
-     end
-     resources :albums do
-       member do
-         post 'votes'
-       end
-     end
-   end
+  resources :media, path: ':media_type' do
+    member do
+      post 'votes'
+    end
+  end
+end
+  #    resources :movies do
+  #      member do
+  #        post 'votes'
+  #      end
+  #    end
+  #    resources :books do
+  #      member do
+  #        post 'votes'
+  #      end
+  #    end
+  #    resources :albums do
+  #      member do
+  #        post 'votes'
+  #      end
+  #    end
+  #  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

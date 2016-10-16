@@ -1,5 +1,5 @@
 
-<%= form_for items do |item| %>
+<%= form_for item do |item| %>
   <%= item.text_field :name %>
   <%= item.text_field :creator %>
   <%= item.text_area :description, size: "60x12" %>
@@ -7,4 +7,4 @@
 <% end %>
 
 
-<h1><%=link_to "#{item.name}", item, method: :get ) %></h1>
+<h1><%=link_to "#{item.name}", item, method: :get  %></h1>

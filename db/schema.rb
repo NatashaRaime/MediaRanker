@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161013234145) do
+ActiveRecord::Schema.define(version: 20161014215706) do
 
   create_table "media", force: :cascade do |t|
-    t.string "type"
-    t.string "name"
-    t.string "creator"
-    t.text   "description"
-    t.text   "votes"
+    t.string  "media_type"
+    t.string  "name"
+    t.string  "creator"
+    t.text    "description"
+    t.integer "votes",       default: 0, null: false
   end
 
 end
