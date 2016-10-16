@@ -1,8 +1,8 @@
 
 <h1 class= "tops"> Top Movies Top Books Top Albums </h1>
-<% items.each do |item| %>
-<td><%=link_to("#{item.name}", item, method: :get ) %></td>
-<td>Ranked:<%= item.upvote.count %></td>
+<% items.each do |f| %>
+<td><%=link_to("#{f.name}", item, method: :get ) %></td>
+<td>Ranked:<%= f.upvote.count %></td>
 <% end %>
 
 <h1><%= button_to("View More", items, method: :get) %></h1>
