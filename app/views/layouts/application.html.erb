@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MediaRanker</title>
+  <%= stylesheet_link_tag    'foundation.css', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= image_tag("owl.jpg", :alt => "owl") %>
+        <span><%= link_to("Media Ranker ", root_path, method: :get)%></span>
+
+
+    <%= yield %>
+
+  </body>
+</html>
