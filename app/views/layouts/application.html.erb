@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
-<meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Rails Foundation" %>">
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  </head>
+<html>
+<head>
+  <title>MediaRanker</title>
+  <%= stylesheet_link_tag    'foundation.css', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= image_tag("owl.jpg", :alt => "owl") %>
+        <span><%= link_to("Media Ranker ", root_path, method: :get)%></span>
 
-  <body>
-<h1 class="nav"><%= link_to("Media Ranker ", root_path, method: :get) %></h1> <p>ranking the best of everything</p>
+
     <%= yield %>
 
   </body>

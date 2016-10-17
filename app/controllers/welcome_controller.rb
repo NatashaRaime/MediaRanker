@@ -1,7 +1,6 @@
 class WelcomeController < ApplicationController
   def index
-  # @albums = Album.all
-  # @movies = Movie.all
-  # @books = Book.all
+    @welcome = Medium.where(media_type: params[:media_type])
+    @welcome.order('votes DESC').first(5)
   end
 end
