@@ -33,17 +33,17 @@ class MediaController < ApplicationController
 
   def destroy
     @medium = Medium.find(params[:id]).destroy
-    redirect_to media_types_path
+    redirect_to media_path
   end
 
   def edit
-    @medium = Medium.find(params[:id])
+     @medium = Medium.find(params[:id])
   end
 
   def update
     @medium = Medium.find(params[:id])
     if @medium.update(medium_params)
-      redirect_to type_path(params[:id])
+      redirect_to medium_path(id: params[:id])
     else
       render :edit
     end

@@ -6,5 +6,5 @@
   <h1><%= button_to "Upvote", votes_medium_path(item.url_params), method: :post %></h1>
   <h1><%= button_to "Edit", edit_medium_path(item.url_params), method: :get %></h1>
   <h1><%= button_to "Delete", medium_path(item.url_params), method: :delete, data: { confirm: "Are you sure?" } %></h1>
-  <h1><%= button_to "View All", @media, method: :get %></h1>
+  <h1><%= button_to "View All #{item.media_type}", media_path, method: :get %></h1>
   <h1><%= button_to "View All Media", root_path, method: :get %></h1>
