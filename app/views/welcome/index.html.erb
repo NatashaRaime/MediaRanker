@@ -3,4 +3,25 @@
 <h1><%= link_to("view more books", media_path(media_type: 'books'), method: :get) %></h1>
 <h1><%= link_to("view more movies", media_path(media_type: 'movies'), method: :get) %></h1>
 
-<%# render partial: 'welcome', locals:{i: @movies, item: @books, items: @albums}, :spacer_template => 'post_divider' %>
+
+<h1 class= "tops"> Top Movies Top Books Top Albums </h1>
+<% i.each do |f| %>
+<td><%=link_to("#{f.name}", item, method: :get ) %></td>
+<td>Ranked:<%= f.upvote.count %></td>
+<% end %>
+
+<h1><%= link_to("View More #{i.media_type}", items, method: :get) %></h1>
+
+<% item.each do |f| %>
+<td><%=link_to("#{f.name}", item, method: :get ) %></td>
+<td>Ranked:<%= f.upvote.count %></td>
+<% end %>
+
+<h1><%= link_to("View More }", items, method: :get) %></h1>
+
+<% items.each do |f| %>
+<td><%=link_to("#{f.name}", item, method: :get ) %></td>
+<td>Ranked:<%= f.upvote.count %></td>
+<% end %>
+
+<h1><%= link_to("View More #{items.media_type}", items, method: :get) %></h1>
