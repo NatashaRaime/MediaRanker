@@ -2,7 +2,7 @@ class MediaController < ApplicationController
 
   def votes
     @medium = Medium.find(params[:id])
-    @medium.votes += 1
+    @medium.upvote
     @medium.save
     redirect_to(media_path)
   end
