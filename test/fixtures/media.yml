@@ -5,3 +5,9 @@ nine_stories:
   name: 9 stories
   creator: Salinger
   description: The best short stories
+
+one:
+  media_type: movies
+  name: what about bob?
+  creator: Director
+  description: FUnniest stuff

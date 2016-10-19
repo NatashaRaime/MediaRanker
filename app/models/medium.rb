@@ -1,5 +1,7 @@
 class Medium < ActiveRecord::Base
 
+  validates :name, presence: true, uniqueness: true
+
   def upvote
     self.votes += 1
   end
